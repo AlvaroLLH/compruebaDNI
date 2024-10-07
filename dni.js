@@ -5,15 +5,13 @@
     */
 
     // Declaración de variables
-    let dni = prompt("Introduce un DNI");
-    let numeros = dni.slice(0,8);
-    let letra = dni.slice(8).toUpperCase;
-    let suma;
-    let resto;
-    let compruebaLetra;
-    let letras = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+    let dni = prompt("Introduce un DNI"); // Pedimos el DNI
+    let numeros = dni.slice(0,8); // Extraemos los números
+    let letra = dni.slice(8).toUpperCase(); // Extraemos la letra, .toUpperCase para convertir la letra a mayúscula
+    let resto; // Guardamos el resto de la división
 
-    document.write("Comprobamos si la letra del DNI es correcta");
+    // Array que almacena las posibles letras de un DNI
+    let letras = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
 
     // Sumamos y dividimos los números entre 23 y almacenamos el resto
     resto = numeros % 23;
@@ -21,7 +19,7 @@
     // Condicional if que comprueba que la letra sea la misma que la que se encuentra
     // en la posición del Array (la cual sacamos del resto)
     if(letra === letras[resto]){
-        document.write("La letra del DNI es correcta");
+        alert("La letra del DNI es correcta");
     } else {
-        document.write("La letra del DNI es incorrecta");
+        alert("La letra del DNI es incorrecta");
     }
